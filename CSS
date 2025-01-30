@@ -1,0 +1,48 @@
+
+.box {
+    width: 66.66%;
+    padding: 5px;
+    border: 3px solid black;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+
+
+.child {
+    padding: 10px;
+    border: 5px double red;
+    text-align: center;
+}
+
+
+.child:nth-child(3n) {
+    background-color: yellow;
+    color: black;
+}
+
+
+.child:nth-child(n):not(:nth-child(3n)) {
+    background-color: gray;
+    color: white;
+}
+
+
+@media (max-width: 650px) and (min-width: 250px) {
+    .box {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+
+    .box:hover {
+        height: 200%;
+        transition: height 3s;
+    }
+
+
+    .box:hover .child:last-child {
+        border-color: blue;
+        transition: border-color 3s;
+    }
+}
